@@ -1,8 +1,8 @@
 <p align="center">
-  <a href="https://github.com/jakobo/slack-rich-notify"><img alt="jakobo/slack-rich-notify status" src="https://github.com/jakobo/slack-rich-notify/workflows/units-test/badge.svg"></a>
+  <a href="https://github.com/thecodedrift/slack-rich-notify"><img alt="thecodedrift/slack-rich-notify status" src="https://github.com/thecodedrift/slack-rich-notify/workflows/units-test/badge.svg"></a>
 </p>
 
-# jakobo/slack-rich-notify@v3.0.0
+# thecodedrift/slack-rich-notify@v2.0.1
 
 Because sometimes, you just want a mutliline markdown friendly message sent to slack. With variables.
 
@@ -13,7 +13,7 @@ steps:
   - name: Checkout
     uses: actions/checkout@v2
   - name: Notifying via Slack
-    uses: jakobo/slack-rich-notify@v2.0.1
+    uses: thecodedrift/slack-rich-notify@v2.0.1
     with:
       token: ${{secrets.SLACK_BOT_KEY}} # your slack bot key
       secret: ${{secrets.SLACK_SIGNING_SECRET}} # your slack signing secret
@@ -37,7 +37,7 @@ steps:
 
 # Table of Contents
 
-- [jakobo/slack-rich-notify@v3.0.1](#jakoboslack-rich-notifyv201)
+- [thecodedrift/slack-rich-notify@v2.0.1](#thecodedriftslack-rich-notifyv201)
 - [Usage](#usage)
 - [Table of Contents](#table-of-contents)
 - [Action Parameters](#action-parameters)
@@ -101,7 +101,7 @@ steps:
 
 ## What's in that `context` object?
 
-![View The Context In a Job](https://github.com/jakobo/slack-rich-notify/workflows/Demo%20Output/badge.svg?branch=master&event=push) [View A Sample Dumped Context](https://github.com/jakobo/slack-rich-notify/actions?query=workflow%3A%22Demo+Output%22)
+![View The Context In a Job](https://github.com/thecodedrift/slack-rich-notify/workflows/Demo%20Output/badge.svg?branch=master&event=push) [View A Sample Dumped Context](https://github.com/thecodedrift/slack-rich-notify/actions?query=workflow%3A%22Demo+Output%22)
 
 The `context` object available to your handlebars template is the same context object used by [Octokit](https://github.com/actions/toolkit/tree/master/packages/github). It contains a `payload` object which is your [webhook payload](https://developer.github.com/v3/activity/events/types/), along with a variety of other items connected to your Job, including `sha`, `ref`, and `workflow`.
 
@@ -115,7 +115,7 @@ The `context` object available to your handlebars template is the same context o
     },
     "eventName": "pull_request",
     "sha": "94933e1fe203d34a3ed73033c6fb04eb07715de4",
-    "ref": "refs/heads/jakobo/docker_smash_2",
+    "ref": "refs/heads/thecodedrift/docker_smash_2",
     "workflow": "Pilot",
     "action": "1",
     "actor": "nektos/act"
@@ -146,7 +146,7 @@ Shell commands and the Slack message both support formatting with the [Handlebar
 
 ### Accepting PRs for Handlebars Helpers
 
-At creation, it made sense to only include _the absolute minimum_ helpers that would make writing scripts and Slack messages easier. For example, `cut` offers a convienent way to shorten `sha1` hashes. If you have ideas, open an issue or PR. We just ask that you incldue an example of how this helps compared to regular 'ole bash scripting. (And yes, "the bashism to do X is absurd" is valid)
+At creation, it made sense to only include _the absolute minimum_ helpers that would make writing scripts and Slack messages easier. For example, `cut` offers a convenient way to shorten `sha1` hashes. If you have ideas, open an issue or PR. We just ask that you include an example of how this helps compared to regular 'ole bash scripting. (And yes, "the bashism to do X is absurd" is valid)
 
 # Developing (from original readme)
 
